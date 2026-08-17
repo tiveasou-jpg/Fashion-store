@@ -35,7 +35,7 @@ export default function App() {
       return;
     }
 
-    // 1. Fallback / Direct username check
+    // 1. Direct username check
     const userIdentifier = currentUser.email?.split('@')[0]?.toLowerCase() || '';
     if (userIdentifier === 'tyy' || currentUser.email === 'tyy@gmail.com') {
       setIsAdmin(true);
@@ -112,7 +112,7 @@ export default function App() {
   }
 
   return (
-    <Router basename="/Fashion-store">
+    <Router basename={import.meta.env.BASE_URL}>
       <div className="container">
         <Header 
           cartCount={cart.length} 
